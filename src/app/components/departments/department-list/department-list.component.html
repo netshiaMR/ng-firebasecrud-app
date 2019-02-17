@@ -1,0 +1,18 @@
+<table class="table table-hover">
+    <thead>
+      <th>DeptName</th>
+      <th>Dept Code</th>
+      <th>PojectName</th>
+      <th>ProjectCode</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dept of list">
+        <td (click)="onEdit(dept)">{{dept.deptName}}</td>
+        <td (click)="onEdit(dept)">{{dept.deptNumber}}</td>
+        <td (click)="onEdit(dept)">{{dept.projectName}}</td>
+        <td (click)="onEdit(dept)">{{dept.projectCode}}</td>
+        <td><a class="btn text-danger" (click)="onDelete(dept.id)"><i class="fa fa-trash"></i></a></td>
+      </tr>
+    </tbody>
+  </table>

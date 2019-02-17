@@ -1,0 +1,29 @@
+<h3 class="display-4">PRO. Register</h3>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="projectService.formData.id">
+    <div class="form-group">
+      <input name="projectName" #projectName="ngModel" [(ngModel)]="projectService.formData.projectName" class="form-control" placeholder="Project name" required>
+      <div *ngIf="projectName.invalid && projectName.touched" class="validation-error">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <textarea name="projectDescription" #projectDescription="ngModel" [(ngModel)]="projectService.formData.projectDescription" class="form-control" placeholder="Project Description" required  rows="3"></textarea>
+        <div *ngIf="projectDescription.invalid && projectDescription.touched" class="validation-error">This field is required.</div>
+    </div>
+    <div class="form-group">
+         <input name="departmentName" #departmentName="ngModel" [(ngModel)]="projectService.formData.departmentName" class="form-control" placeholder="Department name" required>
+         <div *ngIf="departmentName.invalid && projectName.touched" class="validation-error">This field is required.</div>
+    </div>
+    <div class="form-group row">
+      <div class="form-group col-sm-5">
+          <input name="startDate" #startDate="ngModel" [(ngModel)]="projectService.formData.startDate" class="form-control" placeholder="startDate" required>
+          <div *ngIf="startDate.invalid && startDate.touched" class="validation-error">This field is required.</div> 
+      </div>
+      <div class="form-group col-sm-7">
+          <input name="endDate" #endDate="ngModel" [(ngModel)]="projectService.formData.endDate" class="form-control" placeholder="End date" required>
+          <div *ngIf="endDate.invalid && endDate.touched" class="validation-error">This field is required.</div> 
+      </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">Register</button>
+    </div>
+</form>
