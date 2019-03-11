@@ -7,7 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class ServicesService {
     formData: Department;
-  constructor(private firestore:AngularFirestore) {
+  constructor(private firestore: AngularFirestore) {
 
    }
    getAllDepartment(){

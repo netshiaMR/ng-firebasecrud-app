@@ -8,12 +8,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class EmployeeService {
   formData: Employee;
 
-  constructor(private firestore:AngularFirestore) { 
+  constructor(private firestore: AngularFirestore) {
     const setting: firebase.firestore.Settings = { timestampsInSnapshots: true };
-    firestore.firestore.app.firestore().settings(setting)
+    firestore.firestore.app.firestore().settings(setting);
   }
 
-  getAllEmployees(){
+  getAllEmployees() {
     return this.firestore.collection('employees').snapshotChanges();
   }
 }

@@ -6,10 +6,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class ProjectService {
-  formData : Project;
-  constructor(private firestore:AngularFirestore) { }
- 
-  getAllDepartment(){
+  formData: Project;
+  constructor(private firestore: AngularFirestore) { }
+
+  getAllDepartment() {
     return this.firestore.collection('projects').snapshotChanges();
   }
 }

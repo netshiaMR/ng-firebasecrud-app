@@ -1,9 +1,7 @@
-import { Positions } from './positions.model';
-
 export class Department {
-    id :string;
+    id: string;
     deptName: string;
     deptNumber: string;
-    projectName:string;
+    projectName: string;
     projectCode: string;
 }
